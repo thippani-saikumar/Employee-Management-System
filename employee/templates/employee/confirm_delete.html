@@ -1,0 +1,14 @@
+{% extends "employee/index.html" %}
+{% load static %}
+
+    {% block title %}Confirm Delete{% endblock %}
+
+    {% block content %}
+
+        <p>Are you sure want to delete {{ emp.first_name }} {{ emp.last_name }} ?
+        <form action="{% url "remove_emp" emp.id %}" method="POST">
+            {%  csrf_token %}
+            <input type="submit" value="Delete Permanently" >
+        </form>
+
+    {% endblock content %}

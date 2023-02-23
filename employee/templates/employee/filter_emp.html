@@ -1,0 +1,41 @@
+{% extends "employee/index.html" %}
+{% load static %}
+
+    {% block title %}Filter Employee Details{% endblock %}
+
+
+    {% block content %}
+        <div class="container">
+
+            <h2>Filter Employee Details</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="first_name">First Name </label><br>
+                    <input type="text" id="first_name" name="first_name" value="{{ first_name }}" >
+                </div>
+                <br>
+                <div>
+                    <label for="last_name">Last Name </label><br>
+                    <input type="text" id="last_name" name="last_name" value="{{ last_name }}" >
+                </div>
+                <br>
+                <div>
+                    <label for="department">Department </label><br>
+                    <input type="text" id="department" name="department" value="{{ department }}" >
+                </div>
+                <br>
+                <div>
+                    <label for="role">Role </label><br>
+                    <input type="text" id="role" name="role" value="{{ role }}" >
+                </div>
+                <br>
+                <div>
+                    <input type="reset" value="Reset">
+                    
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        
+        </div>
+    {% endblock content %}

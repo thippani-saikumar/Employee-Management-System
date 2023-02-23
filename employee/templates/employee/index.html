@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>{% block title %}Home{% endblock title %}</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'employee/style.css' %}">
+        <style> body { font-family: sans-serif; } </style>
+    </head>
+    <body>
+        {% include "employee/nav.html" %}
+
+        {% block content %}
+
+            <div class="container">
+                <p>Welcome to <strong> Employee Management System </strong></p>
+                <br>
+                <div>
+                    <a href="{% url "add_emp" %}"><input type="button" value="Click to Add an Employee"></a> 
+                </div>
+                <br>
+                <div>
+                    <a href="{% url "all_emp" %}"><input type="button" value="Click to View all Employees"></a> 
+                </div>
+                <br>
+                <div>
+                    <a href="{% url "filter_emp" %}"><input type="button" value="Click to Filter Employee Details"></a> 
+                </div>
+            </div>
+
+        {% endblock content %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>

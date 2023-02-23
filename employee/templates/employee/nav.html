@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            
+            body { margin: 0; }
+
+            ul {
+                list-style-type: none;
+                margin: 0; 
+                padding: 0;
+                overflow: hidden;
+                position: top;
+                top: 0;
+                width: 100%;
+                background-color: black;
+            }
+
+            li {
+                display: inline;
+                float: right;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 28px 18px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+
+            li a:hover
+            {background-color: rgba(30,144,255,0.8);}
+
+            .logo {
+                display: block;
+                position: absolute;
+                color: white; 
+                font-size: 25px; 
+                padding: 28px 18px; 
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <ul>
+                <a href="{% url "home" %}"><label for="logo" class="logo">Employee Management System</label></a>
+                <li><a href=" {% url 'filter_emp' %} ">Filter Emp Details</a></li>
+                <li><a href=" {% url 'add_emp' %} ">Add An Employee</a></li>
+                <li><a href=" {% url "all_emp" %} ">View All Employees</a></li>
+                <li><a href=" {% url 'home' %} ">Home</a></li>
+            </ul>
+        </nav>
+
+        <script src="" async defer></script>
+    </body>
+</html>

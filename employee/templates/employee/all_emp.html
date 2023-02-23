@@ -1,0 +1,47 @@
+{% extends "employee/index.html" %}
+{% load static %}
+
+    {% block title %}View All Employees{% endblock %}
+
+    {% block content %}
+
+       <h2 style="text-align: center;">View All Employees</h2>
+       <table style= "width: 100%;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Salary</th>
+                    <th>Bonus</th>
+                    <th>Role</th>
+                    <th>Department</th>
+                    <th>Phone No.</th>
+                    <th>Joining Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            {% for emp in emps %}
+                <tbody>
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.first_name}}</td>
+                        <td>{{emp.last_name}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.bonus}}</td>
+                        <td>{{emp.role.name}}</td>
+                        <td>{{emp.department.name}}</td>
+                        <td>{{emp.phone}}</td>
+                        <td>{{emp.joining_date}}</td>
+                        <td>
+                            <form action="{% url 'remove_emp' emp.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="submit" value="Remove">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+       </table>
+
+    {% endblock content %}

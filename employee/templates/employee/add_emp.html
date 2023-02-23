@@ -1,0 +1,60 @@
+{% extends "employee/index.html" %}
+{% load static %}
+
+    {% block title %}Add An Employee{% endblock %}
+
+    {% block content %}
+        <div class="container">
+
+            <h2>Add An Employee</h2><br>
+            <form action="" method="POST" >
+                {% csrf_token %}
+                <div>
+                    <label for="first_name">First Name</label><br>
+                    <input type="text" id="first_name" name="first_name" value="{{ first_name }}" required>
+                </div>
+                <br>
+                <div>
+                    <label for="last_name">Last Name</label><br>
+                    <input type="text" id="last_name" name="last_name" value="{{ last_name }}" required>
+                </div>
+                <br>
+                <div>
+                    <label for="salary">Salary</label><br>
+                    <input type="number" id="salary" name="salary" min="0" value="{{ salary }}" required>
+                </div>
+                <br>
+                <div>
+                    <label for="bonus">Bonus</label><br>
+                    <input type="number" id="bonus" name="bonus" value="{{ bonus }}" min="0" required>
+                </div>
+                <br>
+                <div>
+                    <label for="department">Department</label><br>
+                    <input type="number" id="department" name="department" value="{{ department }}" min="0" required>
+                </div>
+                <br>
+                <div>
+                    <label for="role">Role</label><br>
+                    <input type="number" id="role" name="role" value="{{ role }}" min="0" required>
+                </div>
+                <br>
+                <div>
+                    <label for="phone">Phone Number</label><br>
+                    <input type="tel" id="phone" name="phone" value="{{ phone }}" maxlength="10" required>
+                </div>
+                <br>
+                <div>
+                    <label for="joining_date">Joining Date</label><br>
+                    <input type="date" id="joining_date" name="joining_date" value="{{ joining_date }}" required>
+                </div>
+                <br>
+                <div>
+                    <input type="reset" value="Reset">
+                    
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+
+        </div>
+    {% endblock content %}
